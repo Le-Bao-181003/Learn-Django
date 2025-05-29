@@ -8,16 +8,12 @@
             <h1><a href="https://github.com/Le-Bao-181003/Learn-Django">Bao's blog</a></h1>
         </header>
 
-        <article>
-            <time>published: 29/05/2025, 3:17</time>
-            <h2><a href="">My first post</a></h2>
-            <p>This is my first post haha</p>
-        </article>
-
-        <article>
-            <time>published: 29/05/2025, 3:17</time>
-            <h2><a href="">My second post</a></h2>
-            <p>This is my second post haha</p>
-        </article>
+        {% for post in posts %}
+            <article>
+                <time> publisded: {{post.published_date}}</time>
+                <h2><a href=""> {{ post.title}} </a> </h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </article>
+        {% endfor %}
     </body>
 </html>
